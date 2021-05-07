@@ -13,9 +13,9 @@ from random import randrange
 from turtle import *
 from freegames import vector
 
-ball = vector(-200, -200)
-speed = vector(0, 0)
-targets = []
+ball = vector(-200, -200) # La pelota en su posición inicial
+speed = vector(0, 0) # La velocidad inicial de la pelota
+targets = [] # Lista de los objetivos en pantalla
 
 def tap(x, y):
     """Responde a un click en la pantalla."""
