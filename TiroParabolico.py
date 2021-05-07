@@ -1,14 +1,8 @@
-"""Cannon, hitting targets with projectiles.
+# Código modificado por:
+# Autor: Erick Hernández Silva
+# Autor: Jeovani Hernández Bastida
 
-Exercises
-
-1. Keep score by counting target hits.
-2. Vary the effect of gravity.
-3. Apply gravity to the targets.
-4. Change the speed of the ball.
-
-"""
-
+# Se importan las librerias a usar
 from random import randrange
 from turtle import *
 from freegames import vector
@@ -64,25 +58,28 @@ def move():
         speed.y -= 2 # Crea el efecto de parábola
         ball.move(speed)
 
+    # Copia los objetivos y los borra 
     dupe = targets.copy()
     targets.clear()
 
+    # Dibuja los objetivos que no han sido tocados por la pelota
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
 
     draw()
 
+    # Si un objetivo se sale de la pantalla lo regresa 
     for target in targets:
         if not inside(target):
-            return
+            target.x = 200
 
-    ontimer(move, 50)
+    ontimer(move, 50) # Llama al método move cada 50ms
 
-setup(420, 420, 370, 0)
-hideturtle()
-up()
-tracer(False)
-onscreenclick(tap)
-move()
+setup(420, 420, 370, 0)     # Dibuja el canvas
+hideturtle()    # Desaparece la tortuga
+up()    # Levanta la pluma
+tracer(False)   # Quita la animación de dibujo
+onscreenclick(tap)  # Escucha el click en la pantalla
+move()  # Llama por primera vez al método move
 done()
