@@ -18,25 +18,29 @@ speed = vector(0, 0)
 targets = []
 
 def tap(x, y):
-    "Respond to screen tap."
+    """Responde a un click en la pantalla."""
     if not inside(ball):
+        # Mueve las coordenadas de la pelota
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        # Establece la velocidad de la pelota
+        speed.x = (x + 200) / 10
+        speed.y = (y + 200) / 10
 
 def inside(xy):
-    "Return True if xy within screen."
+    """Regresa verdadero si la pelota está en la pantalla"""
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 def draw():
-    "Draw ball and targets."
+    """Dibuja la pelota y los objetivos"""
     clear()
 
+    # Dibuja todos los objetivos
     for target in targets:
         goto(target.x, target.y)
         dot(20, 'blue')
 
+    # Dibuja la pelota
     if inside(ball):
         goto(ball.x, ball.y)
         dot(6, 'red')
@@ -44,17 +48,20 @@ def draw():
     update()
 
 def move():
-    "Move ball and targets."
-    if randrange(40) == 0:
+    """Mueve la pelota y los objetivos"""
+    # Crea los objetivos con una probabilidad de 1:20
+    if randrange(20) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
+    # Mueve los objetivos
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2 # Velocidad de movimiento
 
+    # Disminuye la velocidad en y de la pelota
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 2 # Crea el efecto de parábola
         ball.move(speed)
 
     dupe = targets.copy()
@@ -79,18 +86,3 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
-Logo
-
-Free Python Games
-
-
-Donate
-If you or your organization uses Free Games, consider donating:
-
-Donate to Free Python Games
-
-Related Topics
-Documentation overview
-Previous: Simon Says
-Next: Bounce
-Quick search
