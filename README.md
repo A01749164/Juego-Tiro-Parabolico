@@ -1,6 +1,10 @@
 # Juego-Tiro-Parabolico
 Se utilizó el código base obtenido de Grant Jenks (http://www.grantjenks.com/docs/freegames/cannon.html).
 
+## Código original
+* El movimiento de la pelota y los objetivos son mas lentos
+* Cuando un objetivo llegaba al lado izquierdo automáticamente terminaba el juego
+
 ## Funcionalidades añadidas
 
 ### Erick Hernández Silva
