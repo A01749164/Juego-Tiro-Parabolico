@@ -27,9 +27,11 @@ def tap(x, y):
         speed.x = (x + 200) / 10
         speed.y = (y + 200) / 10
 
+
 def inside(xy):
     """Regresa verdadero si la pelota está en la pantalla"""
     return -200 < xy.x < 200 and -200 < xy.y < 200
+
 
 def draw():
     """Dibuja la pelota y los objetivos"""
@@ -46,6 +48,7 @@ def draw():
         dot(6, 'red')
 
     update()
+
 
 def move():
     """Mueve la pelota y los objetivos"""
