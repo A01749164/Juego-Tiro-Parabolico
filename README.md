@@ -3,7 +3,7 @@ Se utilizó el código base obtenido de Grant Jenks (http://www.grantjenks.com/d
 
 ## Código original
 * El movimiento de la pelota y los objetivos son mas lentos
-* Cuando un objetivo llegaba al lado izquierdo automáticamente terminaba el juego
+* Cuando un objetivo llega al lado izquierdo automáticamente termina el juego
 
 ## Funcionalidades añadidas
 
